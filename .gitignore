@@ -8,4 +8,5 @@ config/applicationhost.config
 *.user
 .vs/
 */.vs
+*.user
 

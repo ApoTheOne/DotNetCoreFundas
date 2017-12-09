@@ -26,43 +26,15 @@ namespace DotNetCoreFunda
                               IGreeter greeter,
                               ILogger<Startup> logger)
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-
-            //Following line or method is only called once when application starts
-            app.Use(next => 
+            if (env.IsDevelopment())
             {
-                //Following line or method is only called once every request comes
-                return async context =>
-                {
-                    logger.LogInformation("Incoming request!");
-                    if(context.Request.Path.StartsWithSegments("/customMiddlewarePath"))
-                    {
-                        await context.Response.WriteAsync("Responded by our custom middleware!");
-                        logger.LogInformation("Incoming request handled by our middleware!");
-                    }
-                    else
-                    {
-                        /*This will go to next middleware if applcable and execute suitable one.
-                          For eg: in case when url doesnt match with "/customMiddlewarePath" next() middleware will be called 
-                          i.e. app.Run(); as app.UseWelcomePage's path doesn't matches, which Greets with message from config! */
-                        await next(context);
-                        logger.LogInformation("Outgoing response!");
-                    }
-                };
-            });
-
-            app.UseWelcomePage(new WelcomePageOptions()
-            {
-                Path = "/onlyForWelcomePage"
-            });
+                app.UseDeveloperExceptionPage();
+            }
 
             app.Run(async (context) =>
             {
                 var greetings = greeter.GetMessage();
-                await context.Response.WriteAsync(greetings);
+                await context.Response.WriteAsync($"{greetings} : {env.EnvironmentName}");
             });
         }
     }
