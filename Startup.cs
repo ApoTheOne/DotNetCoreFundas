@@ -31,7 +31,7 @@ namespace DotNetCoreFunda
 
             app.Run(async (context) =>
             {
-                var greetings =greeter.GetMessage();
+                var greetings = greeter.GetMessage();
                 await context.Response.WriteAsync(greetings);
             });
         }
