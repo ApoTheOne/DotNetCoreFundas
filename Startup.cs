@@ -31,6 +31,8 @@ namespace DotNetCoreFunda
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseFileServer();
+
             app.Run(async (context) =>
             {
                 var greetings = greeter.GetMessage();

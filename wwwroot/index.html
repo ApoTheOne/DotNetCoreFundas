@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h3>Static page being server from wwwroot folder.</h3>
+    <section>
+        <ul>
+            <b>For this we can use:</b>
+            <li>
+                app.UseDefaultFiles();
+            </li>
+            <li>
+                app.UseStaticFiles();
+            </li>
+            <li>
+                Or instead of these two we can use:
+                app.UseFileServer();
+            </li>
+        </ul>
+        <section>
+            If we pass a url like /index.html or / then we will get static html file
+            <br />else we will get the greeting message from config. Try it out!
+            <br />This might change in other committed changes. Might need to refer same changeset.
+        </section>
+    </section>
+</body>
+</html>
