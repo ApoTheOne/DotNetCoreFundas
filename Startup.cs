@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using DotNetCoreFunda.Services;
 using DotNetCoreFunda.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Rewrite;
 
 namespace DotNetCoreFunda
 {
@@ -47,6 +48,8 @@ namespace DotNetCoreFunda
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseRewriter(new RewriteOptions().AddRedirectToHttps());
 
             app.UseStaticFiles();
 
