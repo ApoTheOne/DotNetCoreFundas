@@ -1,0 +1,22 @@
+﻿@page "{id}"
+@using DotNetCoreFunda.Pages.Employees
+
+
+@model EditModel
+<h1>Edit @Model.Employee.Name:</h1>
+<form method="post">
+    <input type="hidden" asp-for="Employee.Id"/>
+    @*<input type="text" name="Name" value="" />*@
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Employee.Name"></label>
+        <input asp-for="Employee.Name" />
+        <span asp-validation-for="Employee.Name"></span>
+    </div>
+    <div>
+        <label asp-for="Employee.EmployeeType"></label>
+        <select asp-for="Employee.EmployeeType" asp-items="Html.GetEnumSelectList<Employee.EmployeeType>()"></select>
+        <span asp-validation-for="Employee.EmployeeType"></span>
+    </div>
+    <input type="submit" name="save" value="Save" />
+</form>

@@ -1,0 +1,17 @@
+﻿@*@model IEnumerable<DotNetCoreFunda.Model.Employee>;*@
+@model DotNetCoreFunda.ViewModels.HomeIndexViewModel;
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div>Task for today: @Model.TasksForToday</div>
+    <h1>All Employees</h1>
+
+    @foreach (var emp in Model.Employees)
+    {
+        @Html.Partial("_Summary", emp)
+    }
+    <a asp-action="Create">Create an employee:</a>
+</body>
+</html>

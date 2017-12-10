@@ -1,4 +1,12 @@
-.vscode/
-bin/
-obj/
+**/.vscode/
+**/bin/
+**/obj/
+**/launchSettings.json
+config/applicationhost.config
+**/.vs
+*.suo
+*.user
+.vs/
+*/.vs
+*.user
 

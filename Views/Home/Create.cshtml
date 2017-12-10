@@ -1,0 +1,19 @@
+﻿@using DotNetCoreFunda.Model
+@model  Employee;
+
+<h1>Create:</h1>
+<form method="post">
+    @*<input type="text" name="Name" value="" />*@
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="EmployeeType"></label>
+        <select asp-for="EmployeeType" asp-items="@Html.GetEnumSelectList<EmployeeType>()"></select>
+        <span asp-validation-for="EmployeeType"></span>
+    </div>
+    <input type="submit" name="save" value="Save" />
+</form>

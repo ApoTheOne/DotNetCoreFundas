@@ -1,4 +1,4 @@
-namespace DotNetCoreFunda
+namespace DotNetCoreFunda.Services
 {
     public interface IGreeter
     {
