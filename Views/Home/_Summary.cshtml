@@ -1,0 +1,10 @@
+﻿@model Employee
+
+    <section>
+        <h2>@Model.Name</h2>
+        <div>Emp type: @Model.EmployeeType</div>
+         <div>
+             <a asp-action="Details" asp-route-id="@Model.Id">More</a>
+             <a asp-page="/Employees/Edit" asp-route-id="@Model.Id">Edit</a>
+         </div>
+    </section>
