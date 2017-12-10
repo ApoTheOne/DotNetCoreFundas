@@ -18,6 +18,13 @@ namespace DotNetCoreFunda.Services
             };
         }
 
+        public Employee Add(Employee newEmp)
+        {
+            newEmp.Id = _employees.Max(x => x.Id) + 1;
+            _employees.Add(newEmp);
+            return newEmp;
+        }
+
         public Employee Get(int id)
         {
             return _employees.FirstOrDefault(e => e.Id == id);

@@ -33,5 +33,29 @@ namespace DotNetCoreFunda.Controllers
             var model = _employeeData.Get(id);
             return View(model);
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(EmployeeEditCreateModel emp)
+        {
+            if (ModelState.IsValid) {
+                var newEmp = new Employee();
+                newEmp.Name = emp.Name;
+                newEmp.EmployeeType = emp.EmpType;
+                newEmp = _employeeData.Add(newEmp);
+
+                //return View("Details", newEmp);
+                return RedirectToAction(nameof(Details), new { id = newEmp.Id });
+            }
+            else
+            {
+                return View();  
+            }
+        }
     }
 }

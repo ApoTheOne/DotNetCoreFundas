@@ -20,7 +20,7 @@ namespace DotNetCoreFunda
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeter, ConfigGreeter>();
-            services.AddScoped<IEmployeeData, HardCodedEmployees>();
+            services.AddSingleton<IEmployeeData, HardCodedEmployees>();
             services.AddMvc();
         }
 
