@@ -18,6 +18,11 @@ namespace DotNetCoreFunda.Services
             };
         }
 
+        public Employee Get(int id)
+        {
+            return _employees.FirstOrDefault(e => e.Id == id);
+        }
+
         public IEnumerable<Employee> GetAll()
         {
             return _employees;

@@ -9,5 +9,6 @@ namespace DotNetCoreFunda.Services
     public interface IEmployeeData
     {
         IEnumerable<Employee> GetAll();
+        Employee Get(int id);
     }
 }

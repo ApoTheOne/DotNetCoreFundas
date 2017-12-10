@@ -27,5 +27,11 @@ namespace DotNetCoreFunda.Controllers
             };
             return View(viewmodel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var model = _employeeData.Get(id);
+            return View(model);
+        }
     }
 }
