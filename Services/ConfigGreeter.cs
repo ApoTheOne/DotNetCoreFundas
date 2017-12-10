@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Configuration;
-namespace DotNetCoreFunda
+namespace DotNetCoreFunda.Services
 {
     public class ConfigGreeter : IGreeter
     {

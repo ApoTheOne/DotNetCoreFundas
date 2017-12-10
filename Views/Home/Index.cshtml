@@ -1,0 +1,18 @@
+﻿@*@model IEnumerable<DotNetCoreFunda.Model.Employee>;*@
+@model DotNetCoreFunda.ViewModels.HomeIndexViewModel;
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div>Task for today: @Model.TasksForToday</div>
+    <ul>
+        @foreach (var item in Model.Employees)
+        {
+            <li>
+                @item.Id : @item.Name
+            </li>
+        }
+    </ul>
+</body>
+</html>

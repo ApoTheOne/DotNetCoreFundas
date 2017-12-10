@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using DotNetCoreFunda.Services;
 
 namespace DotNetCoreFunda
 {
@@ -19,6 +20,7 @@ namespace DotNetCoreFunda
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeter, ConfigGreeter>();
+            services.AddScoped<IEmployeeData, HardCodedEmployees>();
             services.AddMvc();
         }
 
