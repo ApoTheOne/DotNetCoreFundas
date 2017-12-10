@@ -14,6 +14,7 @@
                 : <a href="/home/details/@item.Id">Details</a>
                 @Html.ActionLink("Click here", "Details", new {id=item.Id })
                 <a asp-action="Details" asp-route-id="@item.Id">More</a>
+                <a asp-page="/Employees/Edit" asp-route-id="@item.Id">Edit</a>
             </li>
             @*<div> <a href="/home/details/@item.Id" /></div>*@
         }

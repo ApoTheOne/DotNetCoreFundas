@@ -34,5 +34,10 @@ namespace DotNetCoreFunda.Services
         {
             return _employees;
         }
+
+        public Employee Update(Employee emp)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

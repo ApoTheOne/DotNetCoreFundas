@@ -1,6 +1,6 @@
-﻿@page
+﻿@page "{name}"
 
-@inject IGreeter Greeter
-
-<div>Welcome to Razor Pages!</div>
-<div>@Greeter.GetMessage()</div>
+@model WelcomeModel
+<div>
+    @Model.GreetingMessage
+</div>

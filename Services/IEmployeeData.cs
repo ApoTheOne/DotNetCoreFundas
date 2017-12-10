@@ -11,5 +11,6 @@ namespace DotNetCoreFunda.Services
         IEnumerable<Employee> GetAll();
         Employee Get(int id);
         Employee Add(Employee newEmp);
+        Employee Update(Employee emp);
     }
 }

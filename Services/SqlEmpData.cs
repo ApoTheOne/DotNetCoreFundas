@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DotNetCoreFunda.Model;
 using DotNetCoreFunda.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace DotNetCoreFunda.Services
 {
@@ -31,6 +32,13 @@ namespace DotNetCoreFunda.Services
         public IEnumerable<Employee> GetAll()
         {
             return _context.Employees.OrderBy(e => e.Name);
+        }
+
+        public Employee Update(Employee emp)
+        {
+            _context.Attach(emp).State = EntityState.Modified;
+            _context.SaveChanges();
+            return emp;
         }
     }
 }
